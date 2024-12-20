@@ -14,6 +14,18 @@
       <link rel="canonical" href="https://www2.nkust.edu.tw/~c113110230/">
 
       <title>高科大劉軒朗-行動版</title>
+
+      <script>
+        // 檢測螢幕寬度或 User-Agent
+        if (window.innerWidth <= 768 || /Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        // 如果是桌面裝置，導向桌面版網站
+        window.location.href = "https://frei-aber-einsam.tw/index.html";
+        } else {
+        // 如果是行動裝置，保持行動版網站
+        window.location.href = "https://frei-aber-einsam.tw/mobile.html";
+        }
+      </script>
+
       <style>
 
          @import url("https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css");
