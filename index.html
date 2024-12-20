@@ -13,7 +13,19 @@
 
       <link rel="alternate" media="handheld" href="https://www2.nkust.edu.tw/~c113110230/index_M.html">
 
-      <title>高科大劉軒朗-電腦版</title>
+      <title>劉軒朗-自由但孤獨</title>
+    
+      <script>
+        // 檢測螢幕寬度或 User-Agent
+        if (window.innerWidth <= 768 || /Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        // 如果是行動裝置，導向行動版網站
+        window.location.href = "https://frei-aber-einsam.tw/index_M.html";
+        } else {
+        // 如果是桌面裝置，保持桌面版網站
+        window.location.href = "https://frei-aber-einsam.tw/index.html";
+        }
+      </script>
+
       <style>
 
          @import url("https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css");
