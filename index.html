@@ -135,46 +135,33 @@
     <a href="https://www.nkust.edu.tw/index.php">
         <img src="NKUST.png" alt="校徽" class="NKUST" style="width: 199px; height: auto;">
     </a>
-    <button id="translateButton" onclick="toggleLanguage()"
-    style="font-size: 16px; color: #000000; text-decoration: none; font-weight: bold; border: 1px solid #000000; border-radius: 5px; padding: 8px 15px; background-color: white; transition: all 0.3s; right: 40px;">
-    切換至 Deutsch
-    </button>
-
+    <button id="lang-switcher">切換語言 (日本語)</button>
     <script>
-        let currentLanguage = "zh-TW"; // 預設語言
-        const translations = {
-            de: {
-                title: "Dies ist eine Seite auf Deutsch",
-                content: "Dieser Text zeigt die Funktion des Sprachwechsels.",
-                button: "切換至正體中文"
-            },
-            zh: {
-                title: "這是正體中文頁面",
-                content: "這段文字是用來展示語言切換功能。",
-                button: "切換至 Deutsch"
-            }
-        };
+        document.addEventListener("DOMContentLoaded", function () {
+            const langSwitcher = document.getElementById("lang-switcher");
+            let currentLang = document.documentElement.lang || "zh"; // 初始語言，預設中文
 
-        // 切換語言
-        function toggleLanguage() {
-            const title = document.getElementById("title");
-            const content = document.getElementById("content");
-            const button = document.getElementById("translateButton");
-
-            if (currentLanguage === "zh-TW") {
-                // 切換到德文
-                currentLanguage = "de";
-                title.textContent = translations.de.title;
-                content.textContent = translations.de.content;
-                button.textContent = translations.de.button;
-            } else {
-                // 切回正體中文
-                currentLanguage = "zh";
-                title.textContent = translations.zh.title;
-                content.textContent = translations.zh.content;
-                button.textContent = translations.zh.button;
+            // 根據目前語言設定按鈕文字
+            function updateButtonText() {
+                langSwitcher.textContent = currentLang === "zh" ? "切換語言 (日本語)" : "切換語言 (中文)";
             }
-        }
+
+            updateButtonText(); // 初始設定按鈕文字
+
+            langSwitcher.addEventListener("click", function () {
+                currentLang = currentLang === "zh" ? "ja" : "zh"; // 切換語言
+                document.documentElement.setAttribute("lang", currentLang);
+                updateButtonText(); // 更新按鈕文字
+            });
+
+            // 移除原本的自動偵測程式碼，因為現在由按鈕控制
+            // const userLang = navigator.language || navigator.userLanguage;
+            // if (userLang.startsWith("ja")) {
+            //     document.documentElement.setAttribute("lang", "ja");
+            // } else {
+            //     document.documentElement.setAttribute("lang", "zh");
+            // }
+        });
     </script>
     </div>
       
