@@ -141,7 +141,7 @@
     </button>
 
     <script>
-        let currentLanguage = "zh"; // 預設語言
+        let currentLanguage = "zh-TW"; // 預設語言
         const translations = {
             de: {
                 title: "Dies ist eine Seite auf Deutsch",
@@ -161,7 +161,7 @@
             const content = document.getElementById("content");
             const button = document.getElementById("translateButton");
 
-            if (currentLanguage === "zh") {
+            if (currentLanguage === "zh-TW") {
                 // 切換到德文
                 currentLanguage = "de";
                 title.textContent = translations.de.title;
