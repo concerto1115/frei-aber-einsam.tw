@@ -20,7 +20,7 @@
             }
 
             body {
-                text-align: center;
+                text-align: left;
                 color: #3f1e1e;
                 font-family: 'Noto Serif TC';
                 font-size: 125%;
@@ -89,5 +89,36 @@
                 <a href="https://www.instagram.com/sharoneliu1115?igsh=NnAxcmZ3MTUxMG9o&utm_source=qr" target="_blank" style="color: #C13584; text-decoration: none; font-weight: bold;">📸 Instagram: @sharoneliu1115</a>
             </li>
         </ul>
+
+        <footer style="background-color: #003a6c; color: white; text-align: left; padding: 10px; font-size: 17px; border-bottom: 5px solid #d8c280;">
+            <p>Copyright©&nbsp;劉軒朗</p>
+        </footer>
+    
+    <!-- 返回頁首按鈕 -->
+    <button id="backToTop" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #df8510; color: white; font-size: 16px; border: none; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; display: none; transition: all 0.3s; z-index: 9999;">
+        <b>↑ 返回頁首</b>
+      </button>
+      
+      <script>
+         // 獲取按鈕
+         const backToTopButton = document.getElementById("backToTop");
+      
+         // 監聽滾動事件，顯示或隱藏按鈕
+         window.addEventListener("scroll", () => {
+             if (window.scrollY > 300) {
+                 backToTopButton.style.display = "block";
+             } else {
+                 backToTopButton.style.display = "none";
+             }
+         });
+      
+         // 點擊按鈕滾動至頁首
+         backToTopButton.addEventListener("click", () => {
+             window.scrollTo({
+                 top: 0,
+                 behavior: "smooth"
+             });
+         });
+      </script>
     </body>
 </html>
