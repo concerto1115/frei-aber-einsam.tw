@@ -135,6 +135,11 @@
                 function getTaiwanYear(year) {
                     return `民國 ${year - 1911} 年`;
                 }
+
+                // 計算日本令和年
+                function getJapanEraYear(year) {
+                    return `令和 ${year - 2018} 年`;
+                }
         
                 // 格式化時間與日期
                 function formatDate(timeZone, isEra = false) {
