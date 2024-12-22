@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- 設置網站 Icon -->
+        <link rel="icon" type="image/png" href="icon.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <title>劉軒朗-關於我</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC");
+        
+            /* 定義載入動畫 */
+            @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+
+            body {
+                text-align: left;
+                color: #3f1e1e;
+                font-family: 'Noto Serif TC';
+                font-size: 125%;
+                animation: fadeIn 1.5s ease-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 網頁上方的區塊 -->
+<div style="width: 100%; background-color: #ffffff; padding: 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #d8c280; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
+    <!-- 「Frei aber einsam」文字區 -->
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise");
+    </style>
+    <a href="https://www.frei-aber-einsam.tw/" style="font-family: Monsieur La Doulaise; font-size: 27px; white-space: nowrap; font-weight: bold; color: #000000; text-decoration: none; display: flex; align-items: center; margin-right: 15px;">
+        &nbsp;&nbsp;Frei aber einsam
+    </a>
+
+    <!-- 導覽選單 -->
+    <div style="display: flex; justify-content: flex-end; align-items: center; white-space: nowrap; flex-grow: 1; padding: 0; margin: 0; overflow-x: auto;">
+        <a href="https://www.frei-aber-einsam.tw/" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            首頁
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/about.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            關於我
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/contact.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            聯絡
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/events.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            活動
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/portfolio.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            作品集
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/timetable.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            個人課表
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/news.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            焦點新聞
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/memes.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            迷因
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+<br><br><br>
+        <h1>焦點新聞</h1>
+        <div style="width: 85%; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
+            <!-- 標題 -->
+            <div style="text-align: left; flex: 1;">
+                <h2 style="font-size: 25px; color: #000000; margin-bottom: 10px;">
+                    準備看一輩子企鵝！Xpark企鵝名稱由「Tomorin」高票當選
+                </h2>
+                <p style="font-size: 17px; color: #000000; margin-bottom: 10px;">
+                    2024-12-10 10:43 遊戲角落／油依
+                </p>
+                <hr style="background-color: gray;">
+                
+                <!-- 按鈕 -->
+                <a href="https://game.udn.com/game/story/122089/8415263" style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; color: #000000; text-decoration: none; background-color: #306d28; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 15px;">
+                    閱讀全文 >>
+                </a>
+            </div>
+        </div>
+<br>
+
+        <footer style="background-color: #003a6c; color: white; text-align: left; padding: 10px; font-size: 17px; border-bottom: 5px solid #d8c280; bottom: 0px;">
+            <p>Copyright©&nbsp;劉軒朗</p>
+        </footer>
+    
+    <!-- 返回頁首按鈕 -->
+    <button id="backToTop" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #df8510; color: white; font-size: 16px; border: none; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; display: none; transition: all 0.3s; z-index: 9999;">
+        <b>↑ 返回頁首</b>
+      </button>
+      
+      <script>
+         // 獲取按鈕
+         const backToTopButton = document.getElementById("backToTop");
+      
+         // 監聽滾動事件，顯示或隱藏按鈕
+         window.addEventListener("scroll", () => {
+             if (window.scrollY > 300) {
+                 backToTopButton.style.display = "block";
+             } else {
+                 backToTopButton.style.display = "none";
+             }
+         });
+      
+         // 點擊按鈕滾動至頁首
+         backToTopButton.addEventListener("click", () => {
+             window.scrollTo({
+                 top: 0,
+                 behavior: "smooth"
+             });
+         });
+      </script>
+    </body>
+</html>
