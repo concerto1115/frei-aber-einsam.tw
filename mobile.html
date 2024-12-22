@@ -173,400 +173,45 @@
             </a>
         </div>
     </div>
-      <hr>
-        <!-- 跑馬燈容器 -->
-  <div class="marquee-container">
-    <!-- 跑馬燈文字 -->
-    <span class="marquee-text">
-        Never gonna give you up, never gonna let you down, 
-        never gonna run around and desert you. 
-        Never gonna make you cry, never gonna say goodbye, 
-        never gonna tell a lie and hurt you.
-    </span>
-</div>
-<style>
-    /* 跑馬燈容器樣式 */
-    .marquee-container {
-        overflow: hidden; /* 隱藏溢出的內容 */
-        white-space: nowrap; /* 不換行 */
-        box-sizing: border-box;
-        background-color: #f9f9f900; /* 背景顏色 */
-        padding: 1px 0; /* 上下內邊距 */
-        border: 1px solid #d8d8d800; /* 邊框 */
-    }
-
-    /* 跑馬燈文字動畫 */
-    .marquee-text {
-        display: inline-block;
-        animation: marquee 30s linear infinite;
-        font-size: 20px; /* 字體大小 */
-        color: #d9ff00; /* 文字顏色 */
-        font-weight: bold;
-    }
-
-    /* 跑馬燈動畫效果 */
-    @keyframes marquee {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-</style>
-<hr>
-
-     <div style="background-color: #f4f4f4; padding: 20px; border: 2px solid #d8d8d8; border-radius: 10px; text-align: center; margin: 20px auto;">
-        <h2 style="color: #003a6c; font-size: 28px; margin-bottom: 15px;">聯絡方式與社群帳號</h2>
-        <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
-            如需聯繫，請透過以下方式：
-        </p>
-        <ul style="list-style-type: none; padding: 0; font-size: 18px; line-height: 1.8;">
-            <li style="margin: 10px 0;">
-                <a href="mailto:c113110230@nkust.edu.tw" style="color: #007bff; text-decoration: none; font-weight: bold;">📧 Email 1: c113110230@nkust.edu.tw</a>
-            </li>
-            <li style="margin: 10px 0;">
-              <a href="mailto:sharoneliu1115@gmail.com" style="color: #007bff; text-decoration: none; font-weight: bold;">📧 Email 2: sharoneliu1115@gmail.com</a>
-            </li>
-            <li style="margin: 10px 0;">
-                <a href="https://www.facebook.com/profile.php?id=100022971422805" target="_blank" style="color: #4267B2; text-decoration: none; font-weight: bold;">🌐 Facebook: 劉軒朗</a>
-            </li>
-            <li style="margin: 10px 0;">
-                <a href="https://www.instagram.com/sharoneliu1115?igsh=NnAxcmZ3MTUxMG9o&utm_source=qr" target="_blank" style="color: #C13584; text-decoration: none; font-weight: bold;">📸 Instagram: @sharoneliu1115</a>
-            </li>
-        </ul>
-    </div>
-    <br>
-    <hr>
-
-     <div style="background-color: #f9f9f9; padding: 20px; border: 2px solid #d8d8d8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; text-align: left;">
-        <!-- 標題 -->
-        <h2 style="color: #003a6c; font-size: 28px; margin-bottom: 15px; text-align: center;">
-            <mark style="background-color: #ffd700; color: black; padding: 5px 10px; border-radius: 5px;">🌏 世界時鐘</mark>
-        </h2>
-        
-        <!-- 時間與日期顯示 -->
-        <div id="world-clocks" style="font-size: 22px; color: #333; line-height: 1.8;">
-            <p><b>🇹🇼 高雄:</b> <span id="time-kaohsiung"></span> <br> <small id="date-kaohsiung"></small></p>
-            <p><b>🇯🇵 東京:</b> <span id="time-tokyo"></span> <br> <small id="date-tokyo"></small></p>
-            <p><b>🇬🇧 倫敦:</b> <span id="time-london"></span> <br> <small id="date-london"></small></p>
-            <p><b>🇩🇪 柏林:</b> <span id="time-berlin"></span> <br> <small id="date-berlin"></small></p>
-            <p><b>🇺🇸 紐約:</b> <span id="time-newyork"></span> <br> <small id="date-newyork"></small></p>
-            <p><b>🇺🇸 洛杉磯:</b> <span id="time-losangeles"></span> <br> <small id="date-losangeles"></small></p>
-        </div>
-    </div>
+    <hr style="background-color: gray;">
+      <style>@import url("https://fonts.googleapis.com/css?family=Indie+Flower");</style>
+      <h1 style="font-family: Indie Flower; font-size: 70px; text-align: center;">Posts</h1>
     
-    <script>
-        // 更新各城市時間與日期
-        function updateClocks() {
-            const now = new Date();
-    
-            // 計算台灣民國年
-            function getTaiwanYear(year) {
-                return `民國 ${year - 1911} 年`;
-            }
-    
-            // 計算日本令和年
-            function getJapanEraYear(year) {
-                return `令和 ${year - 2018} 年`;
-            }
-    
-            // 格式化時間與日期
-            function formatDate(timeZone, isEra = false) {
-                const options = { timeZone, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                const dateString = new Intl.DateTimeFormat('zh-TW', options).format(now);
-                const currentYear = now.getFullYear();
-    
-                if (isEra) {
-                    if (timeZone === 'Asia/Taipei') {
-                        return `${dateString} (${getTaiwanYear(currentYear)})`;
-                    }
-                    if (timeZone === 'Asia/Tokyo') {
-                        return `${dateString} (${getJapanEraYear(currentYear)})`;
-                    }
-                }
-    
-                return dateString;
-            }
-    
-            function formatTime(timeZone) {
-                const options = { timeZone, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                return new Intl.DateTimeFormat('zh-TW', options).format(now);
-            }
-    
-            // 時間與日期更新函數
-            const updateCity = (idTime, idDate, timeZone, isEra = false) => {
-                document.getElementById(idTime).textContent = formatTime(timeZone);
-                document.getElementById(idDate).textContent = formatDate(timeZone, isEra);
-            };
-    
-            // 高雄 (台北時區，含年號)
-            updateCity('time-kaohsiung', 'date-kaohsiung', 'Asia/Taipei', true);
-            // 東京 (含年號)
-            updateCity('time-tokyo', 'date-tokyo', 'Asia/Tokyo', true);
-            // 倫敦
-            updateCity('time-london', 'date-london', 'Europe/London');
-            // 柏林
-            updateCity('time-berlin', 'date-berlin', 'Europe/Berlin');
-            // 紐約
-            updateCity('time-newyork', 'date-newyork', 'America/New_York');
-            // 洛杉磯
-            updateCity('time-losangeles', 'date-losangeles', 'America/Los_Angeles');
-        }
-    
-        // 每秒更新一次時間
-        setInterval(updateClocks, 1000);
-        updateClocks(); // 初始化
-    </script>
-    <hr>
+      <div style="background-color: #ffffff; padding: 20px; border: 1px solid #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; max-width: 800px; border-radius: 10px;">
+          <!-- 貼文標題 -->
+          <h2 style="font-size: 24px; color: #003a6c; margin-bottom: 15px; text-align: left;">
+              《星月下的祈禱》管樂期末音樂會
+          </h2>
       
-     <div style="background-color: #f9f9f9; padding: 20px; border: 2px solid #d8d8d8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto;">
-        <!-- 標題 -->
-        <h2 style="text-align: center; font-size: 28px;">
-            <mark style="background-color: #f62877; color: white; padding: 5px 10px; border-radius: 5px;">焦點新聞</mark>
-        </h2>
-
-        <img src="mygo1.jpg" alt="news" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <img src="mygo2.jpg" alt="news" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-
-        <h2 style="color: black;">準備看一輩子企鵝！Xpark企鵝名稱由「Tomorin」高票當選</h2>
-        <p style="color: rgb(70, 70, 70);">2024-12-10 10:43 遊戲角落／油依</p><br>
-
-        <!-- 介紹內容 -->
-        <p style="color: black; line-height: 1.8; text-align: justify; margin-top: 15px;">
-            Xpark 前段時間舉辦的國王企鵝寶寶取名活動，於今（10）日公布網友投票結果：由獲得 13622 票的「Tomorin」高票當選。<br><br>
-            先前有網友質疑 Xaprk 官方利用機器人進行灌票，當時官方便有出面闢謠表示絕無黑箱行為，請大眾靜待他們統計投票結果。在最終結果宣布的同時，官方也再次強調他們一直以來秉持著公正、公開的原則舉辦活動，認為這是身為台灣人民的共識。<br><br>
-            由於 Tomorin 是引用 MyGO!!!!! 角色名稱，為尊重原作，Xpark 第一階段時就與日方取得聯繫，以確保活動符合期待且順利進行，讓 Tomorin 的支持者心服口服。<br><br>
-        </p>
-
-        <a href="https://game.udn.com/game/story/122089/8415263" style="font-size: 10px; color: #007bff; text-decoration: none; font-weight: bold; ">原始文章：<br>game.udn.com/game/story/122089/8415263</a>
-        
-    </div>
-    <hr>
+          <!-- 貼文日期與作者資訊 -->
+          <p style="font-size: 14px; color: #777; margin-bottom: 20px;">
+              發表日期：2024-12-16&nbsp;&nbsp;|&nbsp;&nbsp;作者：劉軒朗
+          </p>
       
-     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);margin: 20px auto;">
-        <h2 style="text-align: center; font-size: 28px; color: #003a6c; margin-bottom: 20px;">
-            <mark style="background-color: #5d2c1e; color: white; padding: 5px 10px; border-radius: 5px;">畢業學校</mark>
-        </h2>
-        
-        <!-- 清單區塊 -->
-        <ul style="list-style-type: none; padding: 0; margin: 0; text-align: left;">
-            <!-- 高中 -->
-            <li style="margin-bottom: 20px;">
-                <p style="font-size: 25px; font-weight: bold; color: #333;">高中</p>
-                <a href="https://www.tyai.tyc.edu.tw" target="_blank" style="text-decoration: none; color: #0056b3;">
-                    <img src="tyai.jpg" alt="高中" style="width: 120px; height: 120px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 5px;">
-                    <p style="color: #0056b3; font-size: 20px;">國立臺北科技大學附屬<br>桃園農工高級中等學校<br>電子科</p>
-                </a><br>
-            </li>
-            
-            <!-- 國中 -->
-            <li style="margin-bottom: 20px;">
-                <p style="font-size: 25px; font-weight: bold; color: #333;">國中</p>
-                <a href="https://www.dyjhs.tyc.edu.tw" target="_blank" style="text-decoration: none; color: #0056b3;">
-                    <img src="dyjhs.jpg" alt="國中" style="width: 120px; height: 120px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 5px;">
-                    <p style="color: #0056b3; font-size: 20px;">桃園市立大有國民中學</p>
-                </a><br>
-            </li>
-            
-            <!-- 國小 -->
-            <li style="margin-bottom: 20px;">
-                <p style="font-size: 25px; font-weight: bold; color: #333;">國小</p>
-                <a href="https://www.dayes.tyc.edu.tw" target="_blank" style="text-decoration: none; color: #0056b3;">
-                    <img src="dayes.jpg" alt="國小" style="width: 120px; height: 120px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 5px;">
-                    <p style="color: #0056b3; font-size: 20px;">桃園市立大業國民小學</p>
-                </a><br>
-            </li>
-        </ul>
-    </div>
-      <hr>
-      
-      <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);margin: 20px auto;">
-        <h2 style="text-align: center; font-size: 28px; color: #003a6c; margin-bottom: 20px;">
-            <mark style="background-color: #228b22; color: white; padding: 5px 10px; border-radius: 5px;">興趣、專長</mark>
-        </h2>
-    
-        <!-- 清單區塊 -->
-        <ol style="font-size: 20px; padding-left: 20px; margin-top: 15px; color: black;">
-            <li style="margin-bottom: 10px;">
-                音樂創作
-            </li><br>
-            <li style="margin-bottom: 10px;">
-                音樂分析
-            </li><br>
-            <li style="margin-bottom: 10px;">
-                音樂改編<a href="https://www.frei-aber-einsam.tw/春の海.pdf" style="text-decoration: none; color: #175f9e;">（作品連結）</a>
-            </li><br>
-            <li style="margin-bottom: 10px;">
-                樂器演奏：<br><br>
-                <ol type="i" style="margin-bottom: 10px;">
-                    <li style="margin-bottom: 10px;">
-                        單簧管（豎笛、黑管、Clarinet、Cl）
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        小提琴（Violin）
-                    </li>
-                </ul>
-            </li>
-        </ol>
-    </div>
-      <hr>
-      
-      <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; text-align: center;">
-        <h2 style="text-align: center; font-size: 25px; color: #003a6c; margin-bottom: 20px;">
-            <mark style="background-color: #e3e01c; color: rgb(0, 0, 0); padding: 5px 10px; border-radius: 5px;">《星月下的祈禱》管樂期末音樂會</mark>
-        </h2><br>
-        
-        <!-- 海報圖片 -->
-        <img src="cct.jpg" alt="海報" style="width: 100%; max-width: 362px; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        
-        <hr style="background-color: gray;">
-        <!-- 小標題 -->
-        <h2 style="color: black;"><mark>演 出 大 成 功 ！ ！</mark></h2>
+          <!-- 海報圖片 -->
+          <img src="cct.jpg" alt="海報" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <hr style="background-color: gray;">
 
-        <img src="concert1.jpg" alt="海報" style="width: 40%; max-width: 362px; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <img src="concert2.jpg" alt="海報" style="width: 40%; max-width: 362px; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-
-        <h3 style="color: black;">感謝所有前來捧場的朋友！！</h3><br>
-
-        <img src="concert3.jpg" alt="海報" style="width: 60%; max-width: 362px; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-    </div>
-      <hr>
+          <!-- 內文 -->
+          <p style="font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px; text-align: left;">
+              我們的期末音樂會——<strong>《星月下的祈禱》</strong>於昨晚完美落幕！這是一場充滿感動與熱情的音樂之夜，感謝所有參與的夥伴以及觀眾朋友。特別是每位管樂社成員，大家的努力讓整個演出更加精彩。
+          </p>
       
-      <div style="max-width: 405px; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);margin: 20px auto;">
-        <!-- 標題 -->
-        <h2 style="text-align: center; font-size: 28px;">
-            <mark style="background-color: #ff69b4; color: white; padding: 5px 10px; border-radius: 5px;">常逛網站</mark>
-        </h2>
-    
-        <!-- 清單區塊 -->
-        <ol type="A" style="font-size: 20px; padding-left: 20px; margin-top: 15px; color: black;">
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.youtube.com/@question-dialectic" style="text-decoration: none; color: #003a6c;"><i>大問題Dialectic</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.youtube.com/@%E9%AB%98%E7%A7%91%E5%A4%A7%E7%AC%AC%E4%B8%80%E6%A0%A1%E5%8D%80-%E7%AE%A1%E6%A8%82" style="text-decoration: none; color: #003a6c;"><i>高科大第一校區-管樂社</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://youtu.be/xTNbclgU3h4?si=ad32_Z2pYqKcyLJm" style="text-decoration: none; color: #68109b;"><i>Mozart | Clarinet quintet K581 in A major - Armida Quartet, Sabine Meyer</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://youtu.be/qBS7BC4aKGE?si=wFuSnBP-7S8RMS4n" style="text-decoration: none; color: #68109b;"><i>Brahms Clarinet Quintet in B minor, Op.115 - Karl Leister, Tomoko Kato, Akihiro Miura, Yoshiko Kawamoto, Nobuko Yamazaki</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.youtube.com/@HibikiVtuber" style="text-decoration: none; color: #00509e;"><i>響Hibiki Channel</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.twitch.tv/hibiki_meridianproject" style="text-decoration: none; color: #00509e;"><i>響_ひびき_子午計畫</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.youtube.com/@%E7%85%8CKirali" style="text-decoration: none; color: #ff4500;"><i>煌Kirali Channel</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.twitch.tv/kirali_neon" style="text-decoration: none; color: #ff4500;"><i>煌きらり_霓</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.latexlive.com/" style="text-decoration: none; color: #2a9d8f;"><i>在線LaTeX公式編輯器</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://elearning.nkust.edu.tw/mooc/index.php" style="text-decoration: none; color: #2a9d8f;"><i>國立高雄科技大學 教學平台</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://dictionary.cambridge.org/" style="text-decoration: none; color: #e76f51;"><i>劍橋辭典</i></a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://www.ccr.com.tw/" style="text-decoration: none; color: #e76f51;"><i>佳佳唱片行</i></a>
-            </li>
-        </ol>
-    </div>
-      <hr>
+          <!-- 演出照片 -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
+              <img src="concert1.jpg" alt="演出照片1" style="width: 48%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+              <img src="concert2.jpg" alt="演出照片2" style="width: 48%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          </div>
       
-      <div style="max-width: 405px; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto;">
-        <!-- 標題 -->
-        <h2 style="text-align: center; font-size: 28px;">
-            <mark style="background-color: #ff4d4f; color: white; padding: 5px 10px; border-radius: 5px;">自我介紹</mark>
-        </h2>
-    
-        <!-- 介紹內容 -->
-        <p style="font-size: 20px; color: black; line-height: 1.8; text-align: justify; margin-top: 15px;">
-            劉軒朗，桃園人，家中有父母與一位小五歲的弟弟。<br><br>
-            高中畢業於北科大附屬桃園農工電子科，期間積極參與管樂團，擔任幹部並累積實務經驗，並取得多項專業證照以奠定未來基礎。<br><br>
-            我對音樂，特別是西方古典音樂有濃厚興趣，專長於溝通協調，在團隊中能有效整合聲部。<br><br>
-            我追求自由但也理解孤獨，堅持務實的人生觀，相信每個挑戰都是成長的機會，目標是以技術創新解決實際問題，持續學習與成長。
-        </p>
-    </div>
-      <hr>
+          <!-- 致謝段落 -->
+          <p style="font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px; text-align: left;">
+              特別感謝每一位來到現場的聽眾，您的掌聲與支持對我們意義重大！我們會持續努力，創造更多美好的音樂回憶。
+          </p>
       
-      <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; text-align: center;">
-        <!-- 標題 -->
-        <h2 style="font-size: 27px; text-align: center;">
-            <mark style="background-color: #00000000; color: rgb(0, 0, 0); padding: 5px 10px; border-radius: 5px;">班上點名單項次前後同學的網頁</mark>
-        </h2>
-    
-        <!-- 圖片 -->
-        <img src="tri.webp" alt="tri" class="NKUST" style="width: 72px; height: 72px;">
-        <br>
-    
-        <!-- 清單 -->
-        <ul style="list-style-type: none; padding: 0; margin: 0; text-align: left; font-size: 20px; color: black;">
-            <li style="margin-bottom: 15px;">
-                <a href="https://www2.nkust.edu.tw/~c113110229" style="text-decoration: none; color: #003a6c;">
-                    △ <i><b>C113110229 吳冠潁</b></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://www2.nkust.edu.tw/~c113110231" style="text-decoration: none; color: #003a6c;">
-                    ▼ <i><b>C113110231 謝宗育</b></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-      <hr>
+          <!-- 感謝照片 -->
+          <img src="concert3.jpg" alt="演出照片3" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
       
-      <div style="max-width: 405px; margin: 20px auto; background-color: white; border: 2px solid #d8d8d8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
-         <!-- 標題部分 -->
-         <h2 style="color: white; margin-bottom: 30px; background-color: #003a6c; padding: 15px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-             迷因區
-         </h2>
-         
-         <!-- 每張圖片 -->
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#1 2024北科附工管樂社成果發表音樂會</p>
-             <img src="image.jpg" alt="劉軒朗" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#2 IKEA紅毛猩猩</p>
-             <img src="1145.jpg" alt="劉軒朗" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#3 它一方面很精彩，另一方面卻很糟糕</p>
-             <img src="14.jpg" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#4 高雄捷運 芙莉蓮老奶奶</p>
-             <img src="922.jpg" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#5 狠狠地休息一下（f為「強」）</p>
-             <img src="hh.jpg" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-             <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#6<br>I don't care<br>I dot car<br>I dog cat<br><strong>I-咚-咔</strong></p>
-             <img src="idk.jpg" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-         </div>
-         <div style="margin-bottom: 20px;">
-            <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#7 一個正在跳舞的三角形</p>
-            <img src="tri.webp" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#8 台灣美食節目：</p>
-            <img src="twfood.jpg" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <p style="font-size: 18px; color: #333; margin-bottom: 10px;">#9 ＰＡＤＯＲＵ ＰＡＤＯＲＵ</p>
-            <img src="padoru.gif" alt="meme" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-     </div>
+      </div>
 
       <footer style="background-color: #fc5604; color: rgb(255, 255, 255); text-align: left; padding: 10px; font-size: 17px;">
          <p>Copyright©&nbsp;劉軒朗</p>
