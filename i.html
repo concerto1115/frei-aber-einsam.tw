@@ -179,21 +179,24 @@
 
         <br><hr><br>
 
-            <!-- 標題 -->
-            <h2 style="color: #003a6c; font-size: 28px; margin-bottom: 15px; ">
-                <mark style="background-color: #ffd700; color: black; padding: 5px 10px; border-radius: 5px;">🌏 世界時鐘</mark>
-            </h2><br>
-            
-            <!-- 時間與日期顯示 -->
-            <div id="world-clocks" style="font-size: 22px; color: #333; line-height: 1.8;">
-                <p><b>🇹🇼 高雄:</b> <span id="time-kaohsiung"></span> <br> <small id="date-kaohsiung"></small></p>
-                <p><b>🇯🇵 東京:</b> <span id="time-tokyo"></span> <br> <small id="date-tokyo"></small></p>
-                <p><b>🇬🇧 倫敦:</b> <span id="time-london"></span> <br> <small id="date-london"></small></p>
-                <p><b>🇩🇪 柏林:</b> <span id="time-berlin"></span> <br> <small id="date-berlin"></small></p>
-                <p><b>🇺🇸 紐約:</b> <span id="time-newyork"></span> <br> <small id="date-newyork"></small></p>
-                <p><b>🇺🇸 洛杉磯:</b> <span id="time-losangeles"></span> <br> <small id="date-losangeles"></small></p>
+        <div style="width: 85%; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="width: 100%; max-width: 800px; background-color: #333; color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #333; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <!-- 標題 -->
+                <h2 style="font-size: 24px; color: #ffd700; margin-bottom: 15px; text-align: center;">
+                    <mark style="background-color: #f9f9f9; color: #333; padding: 5px 10px; border-radius: 5px;">🌏 世界時鐘</mark>
+                </h2>
+                
+                <!-- 時間與日期顯示 -->
+                <div id="world-clocks" style="font-size: 18px; color: #f9f9f9; line-height: 1.8; text-align: center;">
+                    <p><b>🇹🇼 高雄:</b> <span id="time-kaohsiung"></span> <br> <small id="date-kaohsiung"></small></p>
+                    <p><b>🇯🇵 東京:</b> <span id="time-tokyo"></span> <br> <small id="date-tokyo"></small></p>
+                    <p><b>🇬🇧 倫敦:</b> <span id="time-london"></span> <br> <small id="date-london"></small></p>
+                    <p><b>🇩🇪 柏林:</b> <span id="time-berlin"></span> <br> <small id="date-berlin"></small></p>
+                    <p><b>🇺🇸 紐約:</b> <span id="time-newyork"></span> <br> <small id="date-newyork"></small></p>
+                    <p><b>🇺🇸 洛杉磯:</b> <span id="time-losangeles"></span> <br> <small id="date-losangeles"></small></p>
+                </div>
             </div>
-
+        </div>
         
         <script>
             // 更新各城市時間與日期
@@ -203,11 +206,6 @@
                 // 計算中華民國年
                 function getTaiwanYear(year) {
                     return `民國 ${year - 1911} 年`;
-                }
-
-                // 計算日本令和年
-                function getJapanEraYear(year) {
-                    return `令和 ${year - 2018} 年`;
                 }
         
                 // 格式化時間與日期
@@ -219,9 +217,6 @@
                     if (isEra) {
                         if (timeZone === 'Asia/Taipei') {
                             return `${dateString} (${getTaiwanYear(currentYear)})`;
-                        }
-                        if (timeZone === 'Asia/Tokyo') {
-                            return `${dateString} (${getJapanEraYear(currentYear)})`;
                         }
                     }
         
@@ -241,8 +236,8 @@
         
                 // 高雄 (台北時區，含年號)
                 updateCity('time-kaohsiung', 'date-kaohsiung', 'Asia/Taipei', true);
-                // 東京 (含年號)
-                updateCity('time-tokyo', 'date-tokyo', 'Asia/Tokyo', true);
+                // 東京
+                updateCity('time-tokyo', 'date-tokyo', 'Asia/Tokyo');
                 // 倫敦
                 updateCity('time-london', 'date-london', 'Europe/London');
                 // 柏林
