@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- 設置網站 Icon -->
+        <link rel="icon" type="image/png" href="icon.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <title>劉軒朗-教學手冊</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC");
+        
+            /* 定義載入動畫 */
+            @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+
+            body {
+                text-align: left;
+                color: #3f1e1e;
+                font-family: 'Noto Serif TC';
+                font-size: 125%;
+                animation: fadeIn 1.5s ease-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 網頁上方的區塊 -->
+<div style="width: 100%; background-color: #ffffff; padding: 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #d8c280; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
+    <!-- 「Frei aber einsam」文字區 -->
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise");
+    </style>
+    <a href="https://www.frei-aber-einsam.tw/" style="font-family: Monsieur La Doulaise; font-size: 27px; white-space: nowrap; font-weight: bold; color: #000000; text-decoration: none; display: flex; align-items: center; margin-right: 15px;">
+        &nbsp;&nbsp;Frei aber einsam
+    </a>
+
+    <!-- 導覽選單 -->
+    <div style="display: flex; justify-content: flex-end; align-items: center; white-space: nowrap; flex-grow: 1; padding: 0; margin: 0; overflow-x: auto;">
+        <a href="https://www.frei-aber-einsam.tw/" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            首頁
+        </a>
+        <a href="https://www.frei-aber-einsam.tw/i.html" style="font-size: 20px; color: #000000; text-decoration: none; font-weight: bold; margin-left: 15px;">
+            網站索引
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+<br><br><br>
+        <h1>教學手冊系列</h1>
+
+        <div style="width: 85%; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #d8d8d8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
+            <!-- 標題 -->
+            <div style="text-align: left; flex: 1;">
+                <h2 style="font-size: 25px; color: #000000; margin-bottom: 10px;">
+                    音高入門手冊
+                </h2>
+                <p style="font-size: 17px; color: #000000; margin-bottom: 10px;">
+                    2025-10-03
+                </p>
+                <hr style="background-color: gray;">
+                
+                <!-- 按鈕 -->
+                <a href="guide_001.pdf" style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; color: #ffffff; text-decoration: none; background-color: #eb5252; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 15px;" target="_blank">
+                    下載pdf檔案 >>
+                </a>
+            </div>
+        </div>
+
+        <br>
+
+<br>
+
+        <footer style="background-color: #003a6c; color: white; text-align: left; padding: 10px; font-size: 17px; border-bottom: 5px solid #d8c280; bottom: 0px;">
+            <p>Copyright©&nbsp;劉軒朗</p>
+        </footer>
+    
+    <!-- 返回頁首按鈕 -->
+    <button id="backToTop" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #df8510; color: white; font-size: 16px; border: none; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; display: none; transition: all 0.3s; z-index: 9999;">
+        <b>↑ 返回頁首</b>
+      </button>
+      
+      <script>
+         // 獲取按鈕
+         const backToTopButton = document.getElementById("backToTop");
+      
+         // 監聽滾動事件，顯示或隱藏按鈕
+         window.addEventListener("scroll", () => {
+             if (window.scrollY > 300) {
+                 backToTopButton.style.display = "block";
+             } else {
+                 backToTopButton.style.display = "none";
+             }
+         });
+      
+         // 點擊按鈕滾動至頁首
+         backToTopButton.addEventListener("click", () => {
+             window.scrollTo({
+                 top: 0,
+                 behavior: "smooth"
+             });
+         });
+      </script>
+    </body>
+</html>
